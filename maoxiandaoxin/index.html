@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛新叶城 - 冒险者集结与新手成长攻略指南</title>
+    <meta name="description" content="本站为您提供冒险岛新叶城的详细地图攻略、任务流程指引、职业推荐及NPC位置查询，帮助新手冒险者快速熟悉新叶城环境，开启冒险旅程。">
+    <meta name="keywords" content="冒险岛新叶城,冒险岛攻略,冒险岛新手任务,冒险岛地图,冒险岛职业推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a8ff;
+            --secondary-color: #fbc531;
+            --accent-color: #e84118;
+            --bg-color: #f5f6fa;
+            --card-bg: #ffffff;
+            --text-main: #2f3640;
+            --text-light: #718093;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 168, 255, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .map-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-img {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .map-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .map-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .map-info {
+            padding: 20px;
+        }
+
+        .map-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .map-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .map-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #f1f2f6;
+            color: var(--text-light);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* NPC Section */
+        .npc-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .npc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .npc-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .npc-item:hover {
+            background: #e9ecef;
+        }
+
+        .npc-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .npc-details h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .npc-details span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 50px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eee;
+            color: var(--primary-color);
+        }
+
+        .faq-content {
+            padding: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2f3640;
+            color: #dcdde1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #7f8fa6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                padding: 20px;
+            }
+
+            nav.open {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"></path><path d="M5 20v-6l4-3 4 3 4-3 4 3v6"></path><path d="M5 10V6a3 3 0 0 1 6 0v4"></path><path d="M13 10V6a3 3 0 0 1 6 0v4"></path></svg>
+                冒险岛<span>新叶城</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#overview" class="active">城市概览</a></li>
+                    <li><a href="#maps">区域地图</a></li>
+                    <li><a href="#npc">重要NPC</a></li>
+                    <li><a href="#guide">新手攻略</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="overview">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>探索新叶城，开启你的冒险之旅</h1>
+                    <p>新叶城是冒险岛世界中所有冒险者诞生的起点。这里充满了生机与希望，也是你从零开始、结识伙伴、踏上传奇之路的摇篮。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>0级</h3>
+                            <p>初始等级</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>3大</h3>
+                            <p>初始职业</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>新手引导</p>
+                        </div>
+                    </div>
+                    <a href="#guide" class="cta-button">获取新手成长指南</a>
+                </div>
+                <div class="hero-image">
+                    <!-- 使用随机种子图片模拟冒险岛风格 -->
+                    <img src="https://picsum.photos/seed/maplestory_neleaf/600/400" alt="新叶城地图示意图" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="guide-section" id="maps">
+            <div class="container">
+                <div class="section-header">
+                    <h2>区域地图分布</h2>
+                    <p>新叶城虽然规模不大，但功能分区明确，每个角落都隐藏着重要的任务线索和NPC。</p>
+                </div>
+                <div class="map-grid">
+                    <article class="map-card">
+                        <div class="map-img">
+                            <span class="map-badge">核心区</span>
+                            <img src="https://picsum.photos/seed/neleaf_center/400/250" alt="新叶城中心广场">
+                        </div>
+                        <div class="map-info">
+                            <h3>新叶城中心广场</h3>
+                            <p>城市的中心地带，拥有邮局、银行和公共布告栏。这里是所有冒险者聚集交流的场所，也是发布主线任务的关键地点。</p>
+                            <div class="map-tags">
+                                <span class="tag">银行</span>
+                                <span class="tag">邮局</span>
+                                <span class="tag">公告板</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="map-card">
+                        <div class="map-img">
+                            <span class="map-badge">训练区</span>
+                            <img src="https://picsum.photos/seed/neleaf_training/400/250" alt="训练场">
+                        </div>
+                        <div class="map-info">
+                            <h3>勇士训练场</h3>
+                            <p>位于城外郊区的专用训练区域。这里聚集了各种弱小但具有代表性的怪物，是新手冒险者练习战斗技巧、熟悉技能连招的最佳场所。</p>
+                            <div class="map-tags">
+                                <span class="tag">练级</span>
+                                <span class="tag">怪物图鉴</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="map-card">
+                        <div class="map-img">
+                            <span class="map-badge">任务区</span>
+                            <img src="https://picsum.photos/seed/neleaf_quest/400/250" alt="委托事务所">
+                        </div>
+                        <div class="map-info">
+                            <h3>委托事务所</h3>
+                            <p>专门处理日常委托和支线任务的地方。完成这些任务可以获得经验值、金币以及稀有的道具奖励，是前期资源积累的重要来源。</p>
+                            <div class="map-tags">
+                                <span class="tag">日常任务</span>
+                                <span class="tag">支线剧情</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NPC Section -->
+        <section class="npc-section" id="npc">
+            <div class="container">
+                <div class="section-header">
+                    <h2>关键NPC指引</h2>
+                    <p>遇到困难时，请前往这些NPC处寻求帮助。他们掌握着开启冒险大门的钥匙。</p>
+                </div>
+                <div class="npc-list">
+                    <div class="npc-item">
+                        <div class="npc-icon">C</div>
+                        <div class="npc-details">
+                            <h4>凯琳</h4>
+                            <span>初始职业导师</span>
+                        </div>
+                    </div>
+                    <div class="npc-item">
+                        <div class="npc-icon">B</div>
+                        <div class="npc-details">
+                            <h4>巴兰</h4>
+                            <span>冒险团团长</span>
+                        </div>
+                    </div>
+                    <div class="npc-item">
+                        <div class="npc-icon">M</div>
+                        <div class="npc-details">
+                            <h4>莫妮卡</h4>
+                            <span>新手任务发布人</span>
+                        </div>
+                    </div>
+                    <div class="npc-item">
+                        <div class="npc-icon">S</div>
+                        <div class="npc-details">
+                            <h4>莎娜</h4>
+                            <span>技能导师</span>
+                        </div>
+                    </div>
+                    <div class="npc-item">
+                        <div class="npc-icon">D</div>
+                        <div class="npc-details">
+                            <h4>迪格斯</h4>
+                            <span>仓库管理员</span>
+                        </div>
+                    </div>
+                    <div class="npc-item">
+                        <div class="npc-icon">H</div>
+                        <div class="npc-details">
+                            <h4>海格</h4>
+                            <span>传送管理员</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section" id="guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2>新手成长指南</h2>
+                    <p>从踏入新叶城的那一刻起，如何快速提升实力，成为传说中的英雄？</p>
+                </div>
+                <div class="map-grid">
+                    <article class="map-card">
+                        <div class="map-info">
+                            <h3>1. 完成主线任务</h3>
+                            <p>优先跟随主线任务指引，这不仅能让你熟悉新叶城的地图结构，还能获得大量的经验值和装备奖励，避免因等级过低而无法进入特定区域。</p>
+                        </div>
+                    </article>
+                    <article class="map-card">
+                        <div class="map-info">
+                            <h3>2. 合理利用技能</h3>
+                            <p>在勇士训练场熟悉每个职业的核心技能。合理搭配技能组合，不仅能提高打怪效率，还能在PVP或高难度副本中占据优势。</p>
+                        </div>
+                    </article>
+                    <article class="map-card">
+                        <div class="map-info">
+                            <h3>3. 加入冒险团</h3>
+                            <p>尽早联系巴兰加入冒险团。建立冒险团是后续开启更高级功能、跨服交流以及获取家族加成的基础。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于新叶城和冒险初期的一些疑问解答。</p>
+                </div>
+                
+                <details>
+                    <summary>新叶城可以离开吗？</summary>
+                    <div class="faq-content">
+                        新手玩家在完成特定的新手引导任务（通常是达到10级或完成“出发”任务）后，可以前往各地的港口和传送门前往更广阔的世界。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何切换职业？</summary>
+                    <div class="faq-content">
+                        在新叶城，你通常只能在初始职业（如战士、法师、弓箭手）之间进行转职。想要尝试其他职业，通常需要通过特定的转职任务，或者前往特定区域寻找转职NPC。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>在哪里买药水？</summary>
+                    <div class="faq-content">
+                        可以在城内的药水店NPC处购买基础药水，或者通过商店购买自动回复药水。此外，部分商店也提供恢复MP的道具。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>新叶城的怪物哪里来？</summary>
+                    <div class="faq-content">
+                        新叶城周边的怪物主要分布在城外的森林和训练场。随着你等级提升，可以前往更高级的区域，那里的怪物将提供更高的经验和掉落。
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; color: #95a5a6;">
+                        本站致力于为冒险岛玩家提供最详尽的新叶城攻略与游戏指南。我们专注于新手引导、地图解析与职业分析。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#overview">城市概览</a></li>
+                        <li><a href="#maps">区域地图</a></li>
+                        <li><a href="#npc">NPC位置</a></li>
+                        <li><a href="#guide">新手攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">游戏官网</a></li>
+                        <li><a href="#">冒险团系统</a></li>
+                        <li><a href="#">职业对比</a></li>
+                        <li><a href="#">装备图鉴</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 冒险岛新叶城攻略站. 本站为玩家攻略分享平台，与游戏官方无关。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换逻辑
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('open');
+        }
+
+        // 简单的平滑滚动效果（兼容旧浏览器）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // 移动端点击后自动收起菜单
+                    const nav = document.getElementById('mainNav');
+                    if (nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                    }
+                }
+            });
+        });
+
+        // 简单的导航激活状态切换
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href').includes(current)) {
+                    li.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+      </html>
